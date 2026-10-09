@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class ScoreKeeper : MonoBehaviour
+{
+    int correctAnswers = 0;
+    int questionsSeen = 0;
+
+    public int CorrectAnswers()
+    {
+        return correctAnswers;
+    }
+
+    public void IncrementCorrectAnswers()
+    {
+        correctAnswers++;
+    }
+
+    public int QuestionsSeen()
+    {
+        return questionsSeen;
+    }
+
+    public void IncrementQuestionsSeen()
+    {
+        questionsSeen++;
+    }
+
+    public int CalculateScore()
+    {
+        return Mathf.RoundToInt(correctAnswers / (float)questionsSeen * 100);
+    }
+}
